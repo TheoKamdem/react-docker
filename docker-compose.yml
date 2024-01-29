@@ -1,0 +1,13 @@
+# l'ajout  du   docker-compose.yml  se justifie  par le  fait  que je souhaite qu'a  chaque  modification du  code 
+# je puisse  observer  les  modif  via  l'auto  load  a  partir  de Docke  ce  qui n'est pas  faisable avec  DockerFile
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "3000:3000"
